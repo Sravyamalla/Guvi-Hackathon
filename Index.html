@@ -1,0 +1,288 @@
+<html>
+
+<head>
+<meta charset="UTF-8"> 
+<title>Chessboard using Pure CSS and HTML</title>
+<script src="scripts/script.js"></script>
+
+<style type="text/css">
+
+.chessboard {
+    width: 640px;
+    height: 640px;
+    border: 25px solid #333;
+    display: block;
+    margin: auto;
+    width: anything under 100%;
+}
+.black {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #999;
+    font-size:50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+}
+.white {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    font-size:50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+}
+
+.black_hover{
+    float: left;
+    background-color: #999;
+    font-size:50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+    border: 3px solid deepskyblue;
+    border-radius: 5px;
+    width: 74px;
+    height: 74px;
+}
+
+.white_hover{
+    float: left;
+    background-color: #fff;
+    font-size:50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+    border: 3px solid deepskyblue;
+    border-radius: 5px;
+    width: 74px;
+    height: 74px;
+}
+
+.possible{
+    float: left;
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: cyan;
+}
+
+.parent{
+    display: table; 
+    height: 80px;
+    position: relative;
+    width: 80px;
+}
+
+.middle{
+    display: table-cell; 
+    vertical-align: middle;
+}
+
+.circle{
+    margin: auto;
+    border: solid 10px blue;
+    border-radius: 50%;
+    background-color: blue;
+    opacity: 0.3;
+    width: 4px;
+    height: 4px;
+}
+
+.outside-circle{
+    margin: auto;
+    border: solid 10px blue;
+    border-radius: 50%;
+    background-color: blue;
+    opacity: 0.2;
+    width: 4px;
+    height: 4px;
+}
+
+.highlight-parent{
+    width: 80px;
+    height: 80px;
+    background-color: blue;
+    opacity: 0.3;
+}
+
+.highlight-circle{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: table-cell;
+    background-color: white;
+}
+
+.check-parent{
+    width: 80px;
+    height: 80px;
+}
+
+.check-circle{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@keyframes fade {
+  0% {
+    background-color: #ff6666;
+    color:#e60000;
+  }
+  50% {
+       
+    background-color: #ff9999;
+    color: #e60000;
+  }
+  100%  {
+    
+    
+    background-color: #ffcccc;
+    color: #e60000;
+  }
+}
+
+.check-animation{
+  animation: fade 1s 0.01s infinite linear alternate;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+    <div style="height: 30px;">
+        <div style="font-size: 40px">
+            &#9821;
+        </div>
+        &#9821; &#9821; &#9821; &#9821; &#9821;
+    </div>
+
+<div class="chessboard">
+<!-- 1st -->
+<div id="a1" class="block white">
+    <div class="parent">
+        <div class="middle">
+            <div class="circle">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div id="b1" class="block black">
+    <div class="highlight-parent">
+        
+    <div class="highlight-circle"> 
+        &#9822;
+    </div>
+    </div>
+
+</div>
+<div id="c1" class="block white">&#9821;</div>
+<div id="d1" class="block black">&#9819;</div>
+<div id="e1" class="block white">
+ 
+    <div class="check-circle check-animation">
+            &#9818;
+    </div>
+    <!-- &#9818; -->
+    
+</div>
+<div id="f1" class="block black">&#9821;</div>
+<div id="g1" class="block white">&#9822;</div>
+<div id="h1" class="block black">&#9820;</div>
+<!-- 2nd -->
+<div id="a2" class="block black">&#9823;</div>
+<div id="b2" class="block white">&#9823;</div>
+<div id="c2" class="block black">&#9823;</div>
+<div id="d2" class="block white">&#9823;</div>
+<div id="e2" class="block black">&#9823;</div>
+<div id="f2" class="block white">&#9823;</div>
+<div id="g2" class="block black">&#9823;</div>
+<div id="h2" class="block white">&#9823;</div>
+<!-- 3th -->
+<div id="a3" class="block white"></div>
+<div id="b3" class="block black"></div>
+<div id="c3" class="block white"></div>
+<div id="d3" class="block black"></div>
+<div id="e3" class="block white"></div>
+<div id="f3" class="block black"></div>
+<div id="g3" class="block white"></div>
+<div id="h3" class="block black"></div>
+<!-- 4st -->
+<div id="a4" class="block black"></div>
+<div id="b4" class="block white"></div>
+<div id="c4" class="block black"></div>
+<div id="d4" class="block white"></div>
+<div id="e4" class="block black"></div>
+<div id="f4" class="block white"></div>
+<div id="g4" class="block black"></div>
+<div id="h4" class="block white"></div>
+<!-- 5th -->
+<div id="a5" class="block white"></div>
+<div id="b5" class="block black"></div>
+<div id="c5" class="block white"></div>
+<div id="d5" class="block black"></div>
+<div id="e5" class="block white"></div>
+<div id="f5" class="block black"></div>
+<div id="g5" class="block white"></div>
+<div id="h5" class="block black"></div>
+<!-- 6th -->
+<div id="a6" class="block black"></div>
+<div id="b6" class="block white"></div>
+<div id="c6" class="block black"></div>
+<div id="d6" class="block white"></div>
+<div id="e6" class="block black"></div>
+<div id="f6" class="block white"></div>
+<div id="g6" class="block black"></div>
+<div id="h6" class="block white"></div>
+<!-- 7th -->
+<div id="a7" class="block white">&#9817;</div>
+<div id="b7" class="block black">&#9817;</div>
+<div id="c7" class="block white">&#9817;</div>
+<div id="d7" class="block black">&#9817;</div>
+<div id="e7" class="block white">&#9817;</div>
+<div id="f7" class="block black">&#9817;</div>
+<div id="g7" class="block white">&#9817;</div>
+<div id="h7" class="block black">&#9817;</div>
+<!-- 8th -->
+<div id="a8" class="block black">&#9814;</div>
+<div id="b8" class="block white">&#9816;</div>
+<div id="c8" class="block black">&#9815;</div>
+<div id="d8" class="block white">&#9813;</div>
+<div id="e8" class="block black">&#9812;</div>
+<div id="f8" class="block white">&#9815;</div>
+<div id="g8" class="block black">&#9816;</div>
+<div id="h8" class="block white">&#9814;</div>
+</div>
+
+<div id="WhiteElementsDiv" style="display: inline;">
+    <div style="font-size: 40px; padding-right: 10px">White:</div>
+    <div style="font-size: 40px">
+        &#9821;
+    </div>
+    <div style="font-size: 40px">
+        &#9821;
+    </div>
+</div>
+
+<div id="blackElementsDiv" style="height: 50px; ">
+    <div style="font-size: 40px; padding-right: 10px">Black</div>
+    <div style="font-size: 40px">
+        &#9814;
+    </div>
+</div>
+
+</body>
+</html>
